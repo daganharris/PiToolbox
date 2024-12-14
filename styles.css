@@ -52,12 +52,15 @@ main {
     padding: 2rem;
 }
 
+/* Toolbox Section */
 .toolbox {
     display: flex;
     gap: 2rem;
     justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
+/* Each tool card */
 .tool {
     background-color: #ffffff;
     padding: 1.5rem;
@@ -67,6 +70,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Align content to the left */
+    margin-bottom: 1rem; /* Add some space at the bottom for better spacing */
 }
 
     .tool h2 {
@@ -90,23 +94,19 @@ main {
     justify-content: space-between;
     gap: 1rem; /* Add space between the two sections */
     width: 100%;
+    flex-wrap: wrap; /* Allow inputs to wrap on smaller screens */
 }
 
-    /* Make Balance Info inputs stacked vertically */
-    .input-group .balance-info {
-        display: flex;
-        flex-direction: column;
-        width: 48%; /* To align with Referral Info */
-    }
-
-        .input-group .balance-info input {
-            width: 100%; /* Take up full width of the container */
-            margin-bottom: 0.5rem; /* Add margin between inputs */
-        }
-
+    .input-group .balance-info,
     .input-group .referral-info {
         width: 48%; /* To align with Balance Info */
     }
+
+        .input-group .balance-info input,
+        .input-group .referral-info input {
+            width: 100%; /* Ensure inputs take full width */
+            margin-bottom: 0.5rem; /* Add margin between inputs */
+        }
 
     .input-group label {
         display: flex;
@@ -178,3 +178,66 @@ h3 {
         width: auto;
         padding: 0.5rem;
     }
+
+/* Media Queries for responsiveness */
+
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+    body {
+        padding: 0 1rem; /* Reduce body padding */
+    }
+
+    header {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center; /* Center-align the header content */
+    }
+
+    .logo h1 {
+        font-size: 1.5rem; /* Smaller title font size on mobile */
+    }
+
+    .tool {
+        width: 100%; /* Make tool cards take full width */
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .input-group {
+        flex-direction: column; /* Stack inputs vertically */
+    }
+
+    .input-group .balance-info,
+    .input-group .referral-info {
+        width: 100%; /* Make inputs take full width */
+    }
+
+    .input-group input,
+    .input-group button {
+        font-size: 1rem; /* Adjust font size */
+        padding: 0.5rem; /* Adjust padding */
+    }
+
+    .final-balance {
+        font-size: 1rem; /* Adjust font size of the final balance */
+    }
+
+    .converter input {
+        width: 80%; /* Make converter inputs take more width */
+    }
+}
+
+/* Tablet (max-width: 900px) */
+@media (max-width: 900px) {
+    .tool {
+        width: 90%; /* Make tool cards take almost full width */
+    }
+
+    .input-group {
+        gap: 0.5rem; /* Adjust gap between inputs */
+    }
+
+    .input-group .balance-info,
+    .input-group .referral-info {
+        width: 100%; /* Make each section full width */
+    }
+}
