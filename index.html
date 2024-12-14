@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Toolbox</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Link to Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="icon.png" alt="Pi Toolbox Icon"> <!-- Image added here -->
+            <h1>Pi Toolbox<span>.</span></h1>
+        </div>
+        <p>Version 1.0, by Skylab2</p>
+    </header>
+    <main>
+        <section class="toolbox">
+            <div class="tool">
+                <h2><span class="material-icons">account_balance_wallet</span>Post-KYC Pi Balance</h2>
+                <div class="input-group">
+                    <div class="balance-info">
+                        <label>Pi Balance Info</label>
+                        <input id="tb" type="text" placeholder="Transferable Balance">
+                        <input id="ub" type="text" placeholder="Unverified Balance">
+                    </div>
+                    <div class="referral-info">
+                        <label>Referral Team Info</label>
+                        <input id="kyc" type="text" placeholder="No. of KYC'd Members">
+                        <input id="nop" type="text" placeholder="No. of People Referred">
+                    </div>
+                </div>
+                <h3>Final Balance: <span id="fin">##π</span></h3> <!-- Final balance header centered -->
+                <button id="calc">Calculate</button>
+            </div>
+        </section>
+    </main>
+<script src="Script.js"></script>
+
+</body>
+
+</html>
