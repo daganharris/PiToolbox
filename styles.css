@@ -5,15 +5,13 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-    box-sizing: border-box;
-    font-size: 16px; /* Set a base font size */
+    box-sizing: border-box; /* Added to ensure padding doesn't affect width */
 }
 
 input::placeholder {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -53,7 +51,7 @@ main {
     padding: 2rem;
 }
 
-/* Toolbox */
+/* Toolbox and tools styling */
 .toolbox {
     display: flex;
     gap: 2rem;
@@ -66,8 +64,7 @@ main {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Allow tool to scale properly */
-    max-width: 450px; /* Add max-width for larger screens */
+    width: 450px; /* Set fixed width for larger screens */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -81,18 +78,26 @@ main {
     width: 100%;
 }
 
+/* Material Icons style */
+.material-icons {
+    font-size: 1.4rem;
+    color: #757575;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
 /* Input group styling */
 .input-group {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     width: 100%;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow input groups to wrap on smaller screens */
 }
 
 .input-group .balance-info,
 .input-group .referral-info {
-    width: 48%;
+    width: 48%; /* Default for larger screens */
 }
 
 .input-group .balance-info input,
@@ -117,7 +122,7 @@ button {
     border: 1px solid #ddd;
 }
 
-/* Button */
+/* Button styles */
 button {
     font-family: 'Montserrat', sans-serif;
     background-color: #007bff;
@@ -133,7 +138,21 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Pi Futures Price card */
+/* Final balance */
+.final-balance {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+h3 {
+    margin: -2;
+    font-size: 1.1rem;
+}
+
+/* Pi Futures Price card center */
 .converter {
     display: flex;
     align-items: center;
@@ -157,53 +176,37 @@ button:hover {
     padding: 0.5rem;
 }
 
-/* Final balance styling */
-.final-balance {
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-    width: 100%;
-}
+/* Media Queries */
 
-h3 {
-    margin: -2;
-    font-size: 1.1rem;
-}
-
-/* Mobile adjustments */
+/* Mobile Devices */
 @media (max-width: 600px) {
-    /* Ensure the entire page scales correctly */
     body {
-        padding: 0 1rem; /* Reduce padding for small screens */
-        font-size: 14px; /* Set a smaller base font size for mobile */
+        padding: 0 1rem; /* Reduce body padding on mobile */
     }
 
     header {
         padding: 1rem;
         flex-direction: column;
-        text-align: center;
+        text-align: center; /* Center header content */
     }
 
     .logo h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Adjust header size */
     }
 
-    /* Tool cards */
     .tool {
-        width: 100%; /* Make tools full-width on mobile */
+        width: 100%; /* Make tools take full width */
         padding: 1rem;
     }
 
-    /* Input group should stack on mobile */
     .input-group {
-        flex-direction: column;
+        flex-direction: column; /* Stack inputs vertically */
         gap: 1rem;
     }
 
     .input-group .balance-info,
     .input-group .referral-info {
-        width: 100%; /* Make sections full-width */
+        width: 100%; /* Ensure each section takes full width */
     }
 
     .input-group input,
@@ -216,19 +219,27 @@ h3 {
         font-size: 1rem;
     }
 
-    /* Pi Futures Price */
     .converter input {
-        width: 80%; /* Ensure the input fields are responsive */
+        width: 80%; /* Adjust input width for mobile */
     }
 }
 
-/* Tablet devices (600px - 900px) */
+/* Tablets (max-width: 900px) */
 @media (max-width: 900px) {
     .tool {
-        width: 90%; /* Allow tool cards to be smaller on tablet */
+        width: 90%; /* Adjust tool cards for tablets */
+    }
+
+    .input-group {
+        gap: 0.5rem;
+    }
+
+    .input-group .balance-info,
+    .input-group .referral-info {
+        width: 100%; /* Ensure full width on tablets */
     }
 
     .converter input {
-        width: 70%; /* Adjust input width for tablet */
+        width: 70%; /* Adjust converter input for tablets */
     }
 }
