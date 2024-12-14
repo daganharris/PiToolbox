@@ -1,11 +1,12 @@
-/* Global styles */
+/* styles.css */
+
+/* Set Montserrat as the global font */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-    box-sizing: border-box; /* Added to ensure padding doesn't affect width */
 }
 
 input::placeholder {
@@ -21,42 +22,40 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header .logo {
-    display: flex;
-    align-items: center;
-}
+    header .logo {
+        display: flex;
+        align-items: center;
+    }
 
-header .logo img {
-    width: 40px;
-    height: auto;
-    margin-right: 10px;
-}
+        header .logo img {
+            width: 40px; /* Adjust the image size */
+            height: auto;
+            margin-right: 10px; /* Space between image and title */
+        }
 
-header .logo h1 {
-    font-size: 2rem;
-    color: #333;
-}
+        header .logo h1 {
+            font-size: 2rem; /* Make the title larger */
+            color: #333;
+        }
 
-header .logo span {
-    color: #007bff;
-}
+        header .logo span {
+            color: #007bff;
+        }
 
-header a {
-    text-decoration: none;
-    color: #007bff;
-    font-size: 0.9rem;
-}
+    header a {
+        text-decoration: none;
+        color: #007bff;
+        font-size: 0.9rem;
+    }
 
 main {
     padding: 2rem;
 }
 
-/* Toolbox and tools styling */
 .toolbox {
     display: flex;
     gap: 2rem;
     justify-content: center;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .tool {
@@ -64,182 +63,118 @@ main {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 450px; /* Set fixed width for larger screens */
+    width: 450px; /* Increased width for both cards */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 1rem;
+    align-items: flex-start; /* Align content to the left */
 }
 
-.tool h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    text-align: left;
-    width: 100%;
-}
+    .tool h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-align: left; /* All h2 headers aligned left */
+        width: 100%; /* Ensure header spans full width */
+    }
 
-/* Material Icons style */
+/* Style for Material Icons */
 .material-icons {
     font-size: 1.4rem;
-    color: #757575;
+    color: #757575; /* Grey color for icons */
     margin-right: 0.5rem;
-    vertical-align: middle;
+    vertical-align: middle; /* Align icon vertically with text */
 }
 
-/* Input group styling */
+/* Adjust for Balance Info and Referral Info sections to be side by side */
 .input-group {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1rem; /* Add space between the two sections */
     width: 100%;
-    flex-wrap: wrap; /* Allow input groups to wrap on smaller screens */
 }
 
-.input-group .balance-info,
-.input-group .referral-info {
-    width: 48%; /* Default for larger screens */
-}
+    /* Make Balance Info inputs stacked vertically */
+    .input-group .balance-info {
+        display: flex;
+        flex-direction: column;
+        width: 48%; /* To align with Referral Info */
+    }
 
-.input-group .balance-info input,
-.input-group .referral-info input {
-    width: 100%;
-    margin-bottom: 0.5rem;
-}
+        .input-group .balance-info input {
+            width: 100%; /* Take up full width of the container */
+            margin-bottom: 0.5rem; /* Add margin between inputs */
+        }
 
-.input-group label {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
+    .input-group .referral-info {
+        width: 48%; /* To align with Balance Info */
+    }
 
-.input-group input,
-button {
-    padding: 0.7rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    border: 1px solid #ddd;
-}
+    .input-group label {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
 
-/* Button styles */
+    .input-group input,
+    button {
+        padding: 0.7rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        box-sizing: border-box;
+        margin-bottom: 0.5rem;
+        border: 1px solid #ddd;
+    }
+
 button {
     font-family: 'Montserrat', sans-serif;
     background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
-    width: auto;
-    margin: 0 auto;
-    display: block;
+    width: auto; /* Button will no longer span the entire width */
+    margin: 0 auto; /* Center the button */
+    display: block; /* Make button block-level for centering */
 }
 
-button:hover {
-    background-color: #0056b3;
-}
+    button:hover {
+        background-color: #0056b3;
+    }
 
-/* Final balance */
 .final-balance {
-    margin-top: 0.5rem;
+    margin-top: 0.5rem; /* Reduce margin to remove space between inputs and Final Balance */
     font-size: 1.1rem;
     font-weight: bold;
-    text-align: center;
-    width: 100%;
+    text-align: center; /* Final Balance header specifically centered */
+    width: 100%; /* Ensures it takes the full width of the card */
 }
 
 h3 {
-    margin: -2;
-    font-size: 1.1rem;
+    margin: -2; /* Removes any default margin */
+    font-size: 1.1rem; /* Make Final Balance title smaller */
 }
 
-/* Pi Futures Price card center */
+/* Center inputs in Pi Futures Price card */
 .converter {
     display: flex;
-    align-items: center;
+    align-items: center; /* Center vertically */
     gap: 1rem;
-    justify-content: center;
+    justify-content: center; /* Center horizontally */
 }
 
-.converter input {
-    width: 40%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.converter span {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    display: inline-block;
-    padding: 0.5rem;
-}
-
-/* Media Queries */
-
-/* Mobile Devices */
-@media (max-width: 600px) {
-    body {
-        padding: 0 1rem; /* Reduce body padding on mobile */
+    .converter input {
+        width: 40%; /* Adjust the width of inputs to leave space for the equals sign */
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
     }
 
-    header {
-        padding: 1rem;
-        flex-direction: column;
-        text-align: center; /* Center header content */
-    }
-
-    .logo h1 {
-        font-size: 1.5rem; /* Adjust header size */
-    }
-
-    .tool {
-        width: 100%; /* Make tools take full width */
-        padding: 1rem;
-    }
-
-    .input-group {
-        flex-direction: column; /* Stack inputs vertically */
-        gap: 1rem;
-    }
-
-    .input-group .balance-info,
-    .input-group .referral-info {
-        width: 100%; /* Ensure each section takes full width */
-    }
-
-    .input-group input,
-    .input-group button {
-        font-size: 1rem;
+    .converter span {
+        font-size: 2rem; /* Increase font size */
+        font-weight: bold;
+        text-align: center;
+        display: inline-block;
+        width: auto;
         padding: 0.5rem;
     }
-
-    .final-balance {
-        font-size: 1rem;
-    }
-
-    .converter input {
-        width: 80%; /* Adjust input width for mobile */
-    }
-}
-
-/* Tablets (max-width: 900px) */
-@media (max-width: 900px) {
-    .tool {
-        width: 90%; /* Adjust tool cards for tablets */
-    }
-
-    .input-group {
-        gap: 0.5rem;
-    }
-
-    .input-group .balance-info,
-    .input-group .referral-info {
-        width: 100%; /* Ensure full width on tablets */
-    }
-
-    .converter input {
-        width: 70%; /* Adjust converter input for tablets */
-    }
-}
