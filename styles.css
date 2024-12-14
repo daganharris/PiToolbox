@@ -1,12 +1,11 @@
-/* styles.css */
-
-/* Set Montserrat as the global font */
+/* Global styles */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
+    box-sizing: border-box; /* Added to ensure padding doesn't affect width */
 }
 
 input::placeholder {
@@ -22,222 +21,225 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-    header .logo {
-        display: flex;
-        align-items: center;
-    }
+header .logo {
+    display: flex;
+    align-items: center;
+}
 
-        header .logo img {
-            width: 40px; /* Adjust the image size */
-            height: auto;
-            margin-right: 10px; /* Space between image and title */
-        }
+header .logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
 
-        header .logo h1 {
-            font-size: 2rem; /* Make the title larger */
-            color: #333;
-        }
+header .logo h1 {
+    font-size: 2rem;
+    color: #333;
+}
 
-        header .logo span {
-            color: #007bff;
-        }
+header .logo span {
+    color: #007bff;
+}
 
-    header a {
-        text-decoration: none;
-        color: #007bff;
-        font-size: 0.9rem;
-    }
+header a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 0.9rem;
+}
 
 main {
     padding: 2rem;
 }
 
-/* Toolbox Section */
+/* Toolbox and tools styling */
 .toolbox {
     display: flex;
     gap: 2rem;
     justify-content: center;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-/* Each tool card */
 .tool {
     background-color: #ffffff;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 450px; /* Increased width for both cards */
+    width: 450px; /* Set fixed width for larger screens */
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align content to the left */
-    margin-bottom: 1rem; /* Add some space at the bottom for better spacing */
+    align-items: flex-start;
+    margin-bottom: 1rem;
 }
 
-    .tool h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        text-align: left; /* All h2 headers aligned left */
-        width: 100%; /* Ensure header spans full width */
-    }
+.tool h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 100%;
+}
 
-/* Style for Material Icons */
+/* Material Icons style */
 .material-icons {
     font-size: 1.4rem;
-    color: #757575; /* Grey color for icons */
+    color: #757575;
     margin-right: 0.5rem;
-    vertical-align: middle; /* Align icon vertically with text */
+    vertical-align: middle;
 }
 
-/* Adjust for Balance Info and Referral Info sections to be side by side */
+/* Input group styling */
 .input-group {
     display: flex;
     justify-content: space-between;
-    gap: 1rem; /* Add space between the two sections */
+    gap: 1rem;
     width: 100%;
-    flex-wrap: wrap; /* Allow inputs to wrap on smaller screens */
+    flex-wrap: wrap; /* Allow input groups to wrap on smaller screens */
 }
 
-    .input-group .balance-info,
-    .input-group .referral-info {
-        width: 48%; /* To align with Balance Info */
-    }
+.input-group .balance-info,
+.input-group .referral-info {
+    width: 48%; /* Default for larger screens */
+}
 
-        .input-group .balance-info input,
-        .input-group .referral-info input {
-            width: 100%; /* Ensure inputs take full width */
-            margin-bottom: 0.5rem; /* Add margin between inputs */
-        }
+.input-group .balance-info input,
+.input-group .referral-info input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
 
-    .input-group label {
-        display: flex;
-        align-items: center;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-    }
+.input-group label {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
 
-    .input-group input,
-    button {
-        padding: 0.7rem;
-        border-radius: 4px;
-        font-size: 1rem;
-        box-sizing: border-box;
-        margin-bottom: 0.5rem;
-        border: 1px solid #ddd;
-    }
+.input-group input,
+button {
+    padding: 0.7rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+}
 
+/* Button styles */
 button {
     font-family: 'Montserrat', sans-serif;
     background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
-    width: auto; /* Button will no longer span the entire width */
-    margin: 0 auto; /* Center the button */
-    display: block; /* Make button block-level for centering */
+    width: auto;
+    margin: 0 auto;
+    display: block;
 }
 
-    button:hover {
-        background-color: #0056b3;
-    }
+button:hover {
+    background-color: #0056b3;
+}
 
+/* Final balance */
 .final-balance {
-    margin-top: 0.5rem; /* Reduce margin to remove space between inputs and Final Balance */
+    margin-top: 0.5rem;
     font-size: 1.1rem;
     font-weight: bold;
-    text-align: center; /* Final Balance header specifically centered */
-    width: 100%; /* Ensures it takes the full width of the card */
+    text-align: center;
+    width: 100%;
 }
 
 h3 {
-    margin: -2; /* Removes any default margin */
-    font-size: 1.1rem; /* Make Final Balance title smaller */
+    margin: -2;
+    font-size: 1.1rem;
 }
 
-/* Center inputs in Pi Futures Price card */
+/* Pi Futures Price card center */
 .converter {
     display: flex;
-    align-items: center; /* Center vertically */
+    align-items: center;
     gap: 1rem;
-    justify-content: center; /* Center horizontally */
+    justify-content: center;
 }
 
-    .converter input {
-        width: 40%; /* Adjust the width of inputs to leave space for the equals sign */
-        padding: 0.5rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        text-align: center;
-        font-family: 'Montserrat', sans-serif;
-    }
+.converter input {
+    width: 40%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
 
-    .converter span {
-        font-size: 2rem; /* Increase font size */
-        font-weight: bold;
-        text-align: center;
-        display: inline-block;
-        width: auto;
-        padding: 0.5rem;
-    }
+.converter span {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    padding: 0.5rem;
+}
 
-/* Media Queries for responsiveness */
+/* Media Queries */
 
-/* Mobile (max-width: 600px) */
+/* Mobile Devices */
 @media (max-width: 600px) {
     body {
-        padding: 0 1rem; /* Reduce body padding */
+        padding: 0 1rem; /* Reduce body padding on mobile */
     }
 
     header {
         padding: 1rem;
         flex-direction: column;
-        text-align: center; /* Center-align the header content */
+        text-align: center; /* Center header content */
     }
 
     .logo h1 {
-        font-size: 1.5rem; /* Smaller title font size on mobile */
+        font-size: 1.5rem; /* Adjust header size */
     }
 
     .tool {
-        width: 100%; /* Make tool cards take full width */
-        padding: 1rem; /* Adjust padding */
+        width: 100%; /* Make tools take full width */
+        padding: 1rem;
     }
 
     .input-group {
         flex-direction: column; /* Stack inputs vertically */
+        gap: 1rem;
     }
 
     .input-group .balance-info,
     .input-group .referral-info {
-        width: 100%; /* Make inputs take full width */
+        width: 100%; /* Ensure each section takes full width */
     }
 
     .input-group input,
     .input-group button {
-        font-size: 1rem; /* Adjust font size */
-        padding: 0.5rem; /* Adjust padding */
+        font-size: 1rem;
+        padding: 0.5rem;
     }
 
     .final-balance {
-        font-size: 1rem; /* Adjust font size of the final balance */
+        font-size: 1rem;
     }
 
     .converter input {
-        width: 80%; /* Make converter inputs take more width */
+        width: 80%; /* Adjust input width for mobile */
     }
 }
 
-/* Tablet (max-width: 900px) */
+/* Tablets (max-width: 900px) */
 @media (max-width: 900px) {
     .tool {
-        width: 90%; /* Make tool cards take almost full width */
+        width: 90%; /* Adjust tool cards for tablets */
     }
 
     .input-group {
-        gap: 0.5rem; /* Adjust gap between inputs */
+        gap: 0.5rem;
     }
 
     .input-group .balance-info,
     .input-group .referral-info {
-        width: 100%; /* Make each section full width */
+        width: 100%; /* Ensure full width on tablets */
+    }
+
+    .converter input {
+        width: 70%; /* Adjust converter input for tablets */
     }
 }
